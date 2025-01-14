@@ -3,19 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fff;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #171717;
+    --foreground: #fff;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--background);
+  background: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+/* Custom Scrollbar for WebKit Browsers */
+.scrollable-table::-webkit-scrollbar {
+  width: 6px; /* Adjust the width of the scrollbar */
+  height: 6px; /* Adjust the height of the horizontal scrollbar */
+}
+
+.scrollable-table::-webkit-scrollbar-thumb {
+  background: #c0c0c0; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.scrollable-table::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0; /* Darker color on hover */
+}
+
+.scrollable-table::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+/* Custom Scrollbar for Firefox */
+.scrollable-table {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #c0c0c0 #f0f0f0; /* Thumb color and track color */
 }
